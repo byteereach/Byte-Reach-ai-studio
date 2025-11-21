@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6 text-neon-yellow">Contact</h4>
             <ul className="space-y-3 text-gray-400">
-              <li>byteereach@gmail.com</li>
+              <li>bytereach@gmail.com</li>
               <li>+91 8320086937</li>
               <li>India</li>
             </ul>

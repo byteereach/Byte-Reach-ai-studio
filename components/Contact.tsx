@@ -17,8 +17,24 @@ export const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock submission
-    alert('Thank you! We will be in touch soon.');
+    
+    // Construct the email body with form details
+    const subject = `New Inquiry: ${formData.service} - ${formData.business || formData.name}`;
+    const body = `
+Name: ${formData.name}
+Business: ${formData.business}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Service: ${formData.service}
+
+Message:
+${formData.message}
+    `.trim();
+
+    // Open the default email client with pre-filled data
+    window.location.href = `mailto:bytereach@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Reset form
     setFormData({ name: '', business: '', email: '', phone: '', service: '', message: '' });
   };
 
@@ -46,7 +62,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Email Us</p>
-                  <a href="mailto:byteereach@gmail.com" className="text-lg font-semibold hover:text-neon-yellow transition-colors">bytereach@gmail.com</a>
+                  <a href="mailto:bytereach@gmail.com" className="text-lg font-semibold hover:text-neon-yellow transition-colors">bytereach@gmail.com</a>
                 </div>
               </div>
 
@@ -56,7 +72,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Call / WhatsApp</p>
-                  <a href="tel:+918320086937" className="text-lg font-semibold hover:text-neon-yellow transition-colors">+91 9199877599</a>
+                  <a href="tel:+918320086937" className="text-lg font-semibold hover:text-neon-yellow transition-colors">+91 8320086937</a>
                 </div>
               </div>
             </div>

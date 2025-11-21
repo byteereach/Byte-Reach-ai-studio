@@ -1,27 +1,32 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import Portfolio from "./components/Portfolio";
-import Results from "./components/Results";
-import Testimonials from "./components/Testimonials";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import React from 'react';
+import { Header } from './components/Header';
+import { Hero } from './components/Hero';
+import { About } from './components/About';
+import { Services } from './components/Services';
+import { Portfolio } from './components/Portfolio';
+import { Results } from './components/Results';
+import { Testimonials } from './components/Testimonials';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
-export default function App() {
+const App: React.FC = () => {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col relative overflow-x-hidden">
       <Header />
-      <Hero />
-      <Services />
-      <Portfolio />
-      <Results />
-      <Testimonials />
-      <About />
-      <Contact />
+      <main className="flex-grow">
+        <Hero />
+        <About />
+        <Services />
+        <Portfolio />
+        <Results />
+        <Testimonials />
+        <Contact />
+      </main>
       <Footer />
       <FloatingWhatsApp />
     </div>
   );
-}
+};
+
+export default App;
