@@ -3,7 +3,7 @@ import { ArrowRight, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const Hero: React.FC = () => {
-  const badgeText = "Accepting New Clients";
+  const badgeText = "Digital marketing is the future";
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-deep-teal">
